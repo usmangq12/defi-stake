@@ -1,0 +1,54 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Local environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js cache
+.next/cache
+
+# TypeScript build outputs
+*.tsbuildinfo
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Mac system files
+.DS_Store
+
+# Miscellaneous
+npm-debug.log*
+
+# Git hooks
+.husky/
+
+# Jest and Cypress test coverage reports
+coverage/
+.nyc_output/
+
+# Storybook build output
+.storybook-out/
+
+# Dist output (if using custom build setup)
+dist/
+
+# Turborepo cache
+.turbo/
