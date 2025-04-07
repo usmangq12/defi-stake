@@ -1,6 +1,6 @@
-import { Navbar } from "@/components/navbar"
-import { StakingStats } from "@/components/staking-stats"
-import { StakingForm } from "@/components/staking-form"
+import { Navbar } from "@/components/navbar";
+import { StakingStats } from "@/components/staking-stats";
+import { StakingForm } from "@/components/staking-form";
 
 export default function Home() {
   return (
@@ -20,17 +20,21 @@ export default function Home() {
                 <h3 className="text-lg font-semibold mb-4">About Staking</h3>
                 <div className="space-y-4 text-sm">
                   <p>
-                    Staking is the process of actively participating in transaction validation on a proof-of-stake
-                    blockchain.
-                  </p>
-                  <p>When you stake your tokens, you help secure the network and earn rewards in return.</p>
-                  <p>
-                    The current Annual Percentage Rate (APR) is 12.5%, which means you can earn approximately 12.5% of
-                    your staked amount over a year.
+                    Staking is the process of actively participating in
+                    transaction validation on a proof-of-stake blockchain.
                   </p>
                   <p>
-                    You can unstake your tokens at any time, but rewards are calculated based on the duration and amount
-                    of your stake.
+                    When you stake your tokens, you help secure the network and
+                    earn rewards in return.
+                  </p>
+                  <p>
+                    The current Annual Percentage Rate (APR) is 12.5%, which
+                    means you can earn approximately 12.5% of your staked amount
+                    over a year.
+                  </p>
+                  <p>
+                    You can unstake your tokens at any time, but rewards are
+                    calculated based on the duration and amount of your stake.
                   </p>
                 </div>
               </div>
@@ -39,6 +43,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  )
+  );
 }
-

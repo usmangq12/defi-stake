@@ -13,9 +13,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function Navbar() {
-  const { address, isConnected, isConnecting, connect, disconnect } =
-    useWallet();
+  const { address, connect, disconnect } = useWallet();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const getFirstCharacters = () => address?.slice(0, 10);
 
   return (
     <nav className="border-b bg-background">
@@ -28,12 +29,12 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          {isConnected ? (
+          {address ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="hidden md:flex">
                   <Wallet className="mr-2 h-4 w-4" />
-                  {address}
+                  {getFirstCharacters()}...
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -45,10 +46,10 @@ export function Navbar() {
           ) : (
             <Button
               onClick={connect}
-              disabled={isConnecting}
+              disabled={!!address}
               className="hidden md:flex"
             >
-              {isConnecting ? "Connecting..." : "Connect Wallet"}
+              Connect Wallet
             </Button>
           )}
 
@@ -93,9 +94,11 @@ export function Navbar() {
               Rewards
             </Link>
 
-            {isConnected ? (
+            {address ? (
               <div className="flex flex-col gap-2">
-                <div className="text-sm font-medium">{address}</div>
+                <div className="text-sm font-medium">
+                  {getFirstCharacters()}...
+                </div>
                 <Button
                   variant="outline"
                   size="sm"
@@ -114,9 +117,9 @@ export function Navbar() {
                   connect();
                   setIsMenuOpen(false);
                 }}
-                disabled={isConnecting}
+                disabled={!!address}
               >
-                {isConnecting ? "Connecting..." : "Connect Wallet"}
+                Connect Wallet
               </Button>
             )}
           </div>
